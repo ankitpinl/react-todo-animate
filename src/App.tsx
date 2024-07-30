@@ -4,8 +4,7 @@ import Button from './components/Button';
 import Input from './components/Input';
 import Checkbox from './components/Checkbox';
 import { v4 as uuid } from 'uuid';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { Motion, spring, presets } from 'react-motion';
+//import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Define the type for a todo item
@@ -53,24 +52,6 @@ function App() {
                     </CSSTransition>
                 ))}
             </TransitionGroup> */}
-
-            {/* <ul className="todo-list">
-                {todos.map((todo) => (
-                    <Motion
-                        defaultStyle={{ left: -1000 }}
-                        style={{ left: spring(0, presets.gentle) }}
-                        key={todo.id}
-                    >
-                        {(interpolatingStyle) => (
-                            <li className="todo-list__item" style={interpolatingStyle as React.CSSProperties}>
-                                <span>{todo.text}</span>
-                                <Checkbox onChange={() => todoRemove(todo.id)} />
-                            </li>
-                        )}
-                    </Motion>
-                ))}
-            </ul> */}
-
             <ul className="todo-list">
                 <AnimatePresence>
                     {todos.map((todo) => (
